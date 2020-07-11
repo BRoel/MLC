@@ -1,4 +1,6 @@
 class List < ApplicationRecord
-    has_many :movies # just adds methods to my model.
+    belongs_to :user
+    has_many :movies
+    has_many :comments
     validates :name, :presence => true
 end
