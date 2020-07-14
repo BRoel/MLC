@@ -1,25 +1,51 @@
-<section class="todoapp">
-  <header class="header">
-    <h1>Your Lists</h1>
-    <%= form_for(@list) do |f| %>
-      <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Please enter a new Movie List Name") %>
-      <%= f.submit :style => "display: none" %>
-    <% end %>
+<div class="mx-auto" style="width: 1000px;">
+<header class="header">
+  <h1>Your Lists</h1>
+  <%= form_for(@list) do |f| %>
+    <%= f.text_field :name, :class => "", :placeholder => (@list.errors.full_messages_for(:name).first || "Enter a new list name...") %>
+    <%= f.submit :style => "display: none" %>
+  <% end %>
 </form>
-  </header>
-  <section class="main">
-    <input class="toggle-all" type="checkbox">
-    <label for="toggle-all">Mark all as complete</label>
-    <ul class="todo-list">
-      <% @lists.each do |list| %>
-      <li>
-        <div class="view">
-          <label><%= link_to list.name, list_path(list) %></label>
-        </div>
-      </li>
-      <% end %>
-    </ul>
-  </section>
-  <footer class="footer">
-  </footer>
+</header>
+<section class="main">
+  <input class="toggle-all" type="checkbox">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <% @lists.each do |list| %>
+    <li>
+      <div class="view">
+        <label><%= link_to list.name, list_path(list) %></label>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </section>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<footer class="footer">
+</footer>
+</div>

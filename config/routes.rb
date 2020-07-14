@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :comments
-  get 'signup'  => 'users#new' 
+  
+  get 'signup'  => 'users#new'
   devise_for :users
-  resources :movies
-  resources :lists
-  root 'lists#index'
+
+  resources :lists do
+    resources :movies
+    # resources :comments
+  end
+
+  root 'lists#index'  
+
 end

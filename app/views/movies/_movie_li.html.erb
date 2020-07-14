@@ -1,0 +1,9 @@
+<%= li_for_movie(movie) do %>
+    <div class="view">
+      <%= form_for_movie_status(movie) %>
+  
+      <label><%= movie.description %></label>
+  
+      <%= button_to "x", list_movie_path(movie.list, movie), :method => "delete", :class => "destroy" %>
+    </div>
+  <% end %>
